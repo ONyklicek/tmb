@@ -13,10 +13,12 @@ Jednou za minutu zkontroluje, jestli se pohnula myš. Pokud ne, posune kurzor o 
 ## Build lokálně
 
 ```bash
-javac TeamsKeepAlive.java
+javac --release 8 TeamsKeepAlive.java
 jar --create --file TeamsKeepAlive.jar --main-class TeamsKeepAlive *.class
 java -jar TeamsKeepAlive.jar      # ukončení Ctrl+C
 ```
+
+JAR cílí na **Javu 8**, takže poběží na Javě 8 i novější.
 
 Nebo si stáhni hotový `TeamsKeepAlive.jar` z **Actions → poslední běh → Artifacts**.
 

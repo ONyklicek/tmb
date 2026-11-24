@@ -21,8 +21,8 @@ jobs:
           distribution: temurin
           java-version: '17'
 
-      - name: Compile
-        run: javac TeamsKeepAlive.java
+      - name: Compile (target Java 8)
+        run: javac --release 8 -Xlint:-options TeamsKeepAlive.java
 
       - name: Package runnable JAR
         run: jar --create --file TeamsKeepAlive.jar --main-class TeamsKeepAlive *.class
