@@ -10,6 +10,13 @@ Malý nástroj v Javě, který udržuje desktopovou relaci aktivní, aby Microso
 
 Jednou za minutu zkontroluje, jestli se pohnula myš. Pokud ne, posune kurzor o 1 px a zpět a stiskne klávesu **F15** (nic nedělá, ale systém ji počítá jako aktivitu). Když u počítače pracuješ sám, nezasahuje.
 
+## Spuštění
+
+- **Dvojklik na `Kel.jar`** — běží na pozadí a ukáže **ikonu v system tray** (lišta u hodin); pravý klik na ikonu → **Konec**.
+- **`run.bat`** — spustí program v okně konzole (uvidíš výpis, ukončení Ctrl+C). `Kel.jar` a `run.bat` musí být ve stejné složce.
+
+Pokud dvojklik na `.jar` otevře WinRAR/7-Zip místo spuštění, nemáš `.jar` svázaný s Javou — použij `run.bat`.
+
 ## Build lokálně
 
 ```bash

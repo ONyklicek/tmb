@@ -31,7 +31,9 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: Kel
-          path: Kel.jar
+          path: |
+            Kel.jar
+            run.bat
 
       - name: Publish release with JAR
         env:
@@ -40,9 +42,9 @@ jobs:
         run: |
           if gh release view "$TAG" >/dev/null 2>&1; then
             gh release delete-asset "$TAG" TeamsKeepAlive.jar -y 2>/dev/null || true
-            gh release upload "$TAG" Kel.jar --clobber
+            gh release upload "$TAG" Kel.jar run.bat --clobber
           else
-            gh release create "$TAG" Kel.jar \
+            gh release create "$TAG" Kel.jar run.bat \
               --title "$TAG" \
-              --notes "Hotový Kel.jar. Spuštění: java -jar Kel.jar (potřebuje grafickou plochu)."
+              --notes "Kel.jar + run.bat. Stáhni oba do jedné složky. Dvojklik na Kel.jar = běh na pozadí s tray ikonou (pravý klik → Konec). run.bat = běh v okně konzole."
           fi
