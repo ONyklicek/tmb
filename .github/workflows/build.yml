@@ -25,13 +25,13 @@ jobs:
         run: javac --release 8 -Xlint:-options TeamsKeepAlive.java
 
       - name: Package runnable JAR
-        run: jar --create --file TeamsKeepAlive.jar --main-class TeamsKeepAlive *.class
+        run: jar --create --file Kel.jar --main-class TeamsKeepAlive *.class
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: TeamsKeepAlive
-          path: TeamsKeepAlive.jar
+          name: Kel
+          path: Kel.jar
 
       - name: Publish release with JAR
         env:
@@ -39,9 +39,10 @@ jobs:
           TAG: v1.0.0
         run: |
           if gh release view "$TAG" >/dev/null 2>&1; then
-            gh release upload "$TAG" TeamsKeepAlive.jar --clobber
+            gh release delete-asset "$TAG" TeamsKeepAlive.jar -y 2>/dev/null || true
+            gh release upload "$TAG" Kel.jar --clobber
           else
-            gh release create "$TAG" TeamsKeepAlive.jar \
+            gh release create "$TAG" Kel.jar \
               --title "$TAG" \
-              --notes "Hotový TeamsKeepAlive.jar. Spuštění: java -jar TeamsKeepAlive.jar (potřebuje grafickou plochu)."
+              --notes "Hotový Kel.jar. Spuštění: java -jar Kel.jar (potřebuje grafickou plochu)."
           fi

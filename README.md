@@ -3,7 +3,7 @@
 Malý nástroj v Javě, který udržuje desktopovou relaci aktivní, aby Microsoft Teams nepřepínal stav na **Pryč** (oranžová).
 
 - Čistá Java, **bez externích závislostí** (jen JDK).
-- Spustitelný JAR (`java -jar TeamsKeepAlive.jar`).
+- Spustitelný JAR (`java -jar Kel.jar`).
 - Build běží na GitHub Actions.
 
 ## Jak to funguje
@@ -14,13 +14,13 @@ Jednou za minutu zkontroluje, jestli se pohnula myš. Pokud ne, posune kurzor o 
 
 ```bash
 javac --release 8 TeamsKeepAlive.java
-jar --create --file TeamsKeepAlive.jar --main-class TeamsKeepAlive *.class
-java -jar TeamsKeepAlive.jar      # ukončení Ctrl+C
+jar --create --file Kel.jar --main-class TeamsKeepAlive *.class
+java -jar Kel.jar      # ukončení Ctrl+C
 ```
 
 JAR cílí na **Javu 8**, takže poběží na Javě 8 i novější.
 
-Nebo si stáhni hotový `TeamsKeepAlive.jar` z **Actions → poslední běh → Artifacts**.
+Nebo si stáhni hotový `Kel.jar` z **Actions → poslední běh → Artifacts** nebo z **Releases**.
 
 ## Omezení
 
